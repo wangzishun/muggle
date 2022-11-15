@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1px-border transform-scale</title>
+  </head>
+  <body style="height: 90vh; display: flex; justify-content: center; align-items: center">
+    <style>
+      .onePx {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+
+        margin-right: 8px;
+      }
+    </style>
+    <div class="onePx">1px</div>
+
+    <style>
+      .transformScale {
+        width: 100px;
+        height: 100px;
+        /* border: 1px solid #000; */
+
+        position: relative;
+      }
+      .transformScale::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200%;
+        height: 200%;
+        border: 1px solid #000;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+      }
+    </style>
+    <div class="transformScale">0.5px</div>
+  </body>
+</html>
