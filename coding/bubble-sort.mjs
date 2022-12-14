@@ -20,7 +20,7 @@ export const bubbleSortV1 = (arr) => {
     }
 
     if (alreadyInorder) {
-      continue
+      break
     }
   }
 
