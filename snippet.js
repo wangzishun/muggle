@@ -1,41 +1,48 @@
-/**
- * 实现建议的 mvvm
- */
+const arr = [
+  {
+    id: 0,
+    data: 1,
+  },
+  {
+    pid: 0,
+    id: 1,
+    data: 2,
+  },
+  {
+    pid: 0,
+    id: 2,
+    data: 3,
+  },
+  {
+    pid: 2,
+    id: 3,
+    data: 4,
+  },
+  {
+    pid: 3,
+    id: 4,
+    data: 5,
+  },
+]
 
-// 给定一个未排序的整数数组，找出最长连续序列的长度。
-// 示例:
-// 输入: [100, 4, 200, 1, 3, 2]
-// 输出: 4
-// 解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
-const longestConsecutive = function (nums) {
-  const arr = nums.slice().sort((a, b) => a - b)
+const toTree = (arr, key = 'id', parentKey = 'pid') => {
+  const map = new Map()
 
-  const len = arr.length
+  arr.forEach((item) => map.set(item[key], item))
 
-  let max = 1
-  let count = 1
+  const result = []
 
-  for (let i = 1; i < len; i++) {
-    if (arr[i] - arr[i - 1] === 1) {
-      count++
+  arr.forEach((item) => {
+    const parent = map.get(item[parentKey])
+
+    if (parent) {
+      parent.children?.push(item) || (parent.children = [item])
     } else {
-      max = Math.max(max, count)
-      count = 0
+      result.push(item)
     }
-  }
+  })
 
-  return max
+  return result
 }
 
-console.log('longestConsecutive', longestConsecutive([100, 4, 200, 1, 3, 2]))
-
-const template = (str) => {
-  return (data) => {
-    return str.replace(/{{\s*(.=?)\s*}}/g, (match, key) => {
-      return data[key]
-    })
-  }
-}
-
-const tpl = template('<p>hey there {{ name }} {{ name }}</p>')
-console.log(tpl({ name: 'world' }))
+console.log(JSON.stringify(toTree(arr), null, 2))

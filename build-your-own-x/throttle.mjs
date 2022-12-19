@@ -1,4 +1,4 @@
-const OwnThrottle = (func, limit, options) => {
+export const _throttle = (func, limit, options) => {
   let context
   let args
 

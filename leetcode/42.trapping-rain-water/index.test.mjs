@@ -1,6 +1,6 @@
-import { runner } from './0.utils.mjs'
+import { runner } from '../utils.mjs'
 
-import * as solutions from './42.trapping-rain-water.mjs'
+import * as solutions from './index.mjs'
 
 const testcase = [
   {

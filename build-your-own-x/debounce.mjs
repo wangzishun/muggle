@@ -1,4 +1,4 @@
-const OwnDebounce = (func, delay, immediate) => {
+const _debounce = (func, delay, immediate) => {
   let timer
   const debounced = function () {
     if (timer) {

@@ -1,6 +1,6 @@
-import { runner } from './0.utils.mjs'
+import { runner } from '../utils.mjs'
 
-import * as solutions from './238.product-of-arrary-except-self.mjs'
+import * as solutions from './index.mjs'
 
 const testcase = [
   {

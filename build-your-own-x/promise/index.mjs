@@ -11,7 +11,7 @@ const _nextTick = (func) => {
     const textNode = document.createTextNode('1')
     const observer = new MutationObserver(func)
     observer.observe(textNode, {
-      characterData: true
+      characterData: true,
     })
     textNode.textContent = '2'
     return
@@ -28,7 +28,7 @@ const _isThenable = (x) => {
   return ((typeof x === 'object' && x !== null) || typeof x === 'function') && typeof x.then === 'function'
 }
 
-function OwnPromise(executor) {
+export function _Promise(executor) {
   this.result = null
   this.status = 'pending'
   this.fulfilledCallbacks = []
@@ -92,7 +92,7 @@ const _resolvePromiseHelper = (thenPromise, callback, result, resolve, reject) =
   })
 }
 
-OwnPromise.prototype.then = function (onFulfilled, onRejected) {
+_Promise.prototype.then = function (onFulfilled, onRejected) {
   // then 的参数 onFulfilled 和 onRejected 默认是一个函数
   if (typeof onFulfilled !== 'function') {
     onFulfilled = (v) => v
@@ -106,7 +106,7 @@ OwnPromise.prototype.then = function (onFulfilled, onRejected) {
   let thenPromise
 
   // 每次执行完 promise.then 都是一个新的实例
-  thenPromise = new OwnPromise((resolve, reject) => {
+  thenPromise = new _Promise((resolve, reject) => {
     // 根据状态执行对应的回调
     if (this.status === 'fulfilled') {
       _resolvePromiseHelper(thenPromise, onFulfilled, this.result, resolve, reject)
@@ -121,7 +121,7 @@ OwnPromise.prototype.then = function (onFulfilled, onRejected) {
   return thenPromise
 }
 
-OwnPromise.prototype.catch = function (onRejected) {
+_Promise.prototype.catch = function (onRejected) {
   return this.then(null, onRejected)
 }
 
@@ -129,29 +129,29 @@ OwnPromise.prototype.catch = function (onRejected) {
  * 不管是 fulfilled 还是 rejected，都会执行
  * 值透传到下一个 then
  */
-OwnPromise.prototype.finally = function (callback) {
+_Promise.prototype.finally = function (callback) {
   return this.then(
-    (value) => OwnPromise.resolve(callback()).then(() => value),
+    (value) => _Promise.resolve(callback()).then(() => value),
     (reason) =>
-      OwnPromise.resolve(callback()).then(() => {
+      _Promise.resolve(callback()).then(() => {
         throw reason
-      })
+      }),
   )
 }
 
-OwnPromise.resolve = function (value) {
-  return new OwnPromise((resolve) => resolve(value))
+_Promise.resolve = function (value) {
+  return new _Promise((resolve) => resolve(value))
 }
 
-OwnPromise.reject = function (reason) {
-  return new OwnPromise((resolve, reject) => reject(reason))
+_Promise.reject = function (reason) {
+  return new _Promise((resolve, reject) => reject(reason))
 }
 
 /**
  * 只有全部实例都 fulfilled，才会被解决
  */
-OwnPromise.all = function (promises) {
-  return new OwnPromise((resolve, reject) => {
+_Promise.all = function (promises) {
+  return new _Promise((resolve, reject) => {
     const result = []
     const length = promises.length
     let count = 0
@@ -177,8 +177,8 @@ OwnPromise.all = function (promises) {
 /**
  * 只要有一个实例 fulfilled 或者 rejected，才会被解决
  */
-OwnPromise.race = function (promises) {
-  return new OwnPromise((resolve, reject) => {
+_Promise.race = function (promises) {
+  return new _Promise((resolve, reject) => {
     promises.forEach((promise) => {
       if (_isThenable(promise)) {
         promise.then(resolve, reject)
@@ -192,8 +192,8 @@ OwnPromise.race = function (promises) {
 /**
  * 只要有一个实例 fulfilled 或者 全部实例都 rejected，才会被解决
  */
-OwnPromise.any = function (promises) {
-  return new OwnPromise((resolve, reject) => {
+_Promise.any = function (promises) {
+  return new _Promise((resolve, reject) => {
     const length = promises.length
     let count = 0
 
@@ -215,8 +215,8 @@ OwnPromise.any = function (promises) {
 /**
  * 等到全部实例都 fulfilled 或者 rejected，才会被解决
  */
-OwnPromise.allSettled = function (promises) {
-  return new OwnPromise((resolve) => {
+_Promise.allSettled = function (promises) {
+  return new _Promise((resolve) => {
     const result = []
     const length = promises.length
     let count = 0
@@ -235,7 +235,7 @@ OwnPromise.allSettled = function (promises) {
           },
           (reason) => {
             processResultByKey({ status: 'rejected', reason }, index)
-          }
+          },
         )
       } else {
         processResultByKey({ status: 'fulfilled', value: promise }, index)
