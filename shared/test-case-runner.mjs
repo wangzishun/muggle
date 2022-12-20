@@ -4,7 +4,7 @@
 import assert from 'node:assert'
 import { test, describe, it } from 'node:test'
 
-export const runner = (solutions, testcase) => {
+export const TestCaseRunner = (solutions, testcase) => {
   for (let [version, solution] of Object.entries(solutions)) {
     describe(version, () => {
       for (let index in testcase) {

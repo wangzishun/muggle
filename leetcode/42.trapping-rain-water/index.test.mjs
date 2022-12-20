@@ -1,4 +1,4 @@
-import { runner } from '../utils.mjs'
+import { TestCaseRunner } from '../../shared/test-case-runner.mjs'
 
 import * as solutions from './index.mjs'
 
@@ -29,4 +29,4 @@ const testcase = [
   },
 ]
 
-runner(solutions, testcase)
+TestCaseRunner(solutions, testcase)

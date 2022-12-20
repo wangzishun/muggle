@@ -229,7 +229,7 @@ const createScheduler = () => {
     }
 
     if (startTime > currentTime) {
-      // TODO: This is a delayed task.
+      // TODO: This is a delayed task. Add it to the timer queue.
     } else {
       newTask.sortIndex = expirationTime
       push(taskQueue, newTask)
