@@ -1,5 +1,5 @@
 const createMaxHeapV1 = () => {
-  const getParentIndex = (index) => Math.floor((index - 1) / 2)
+  const getParentIndex = (index) => (index - 1) >>> 1
   const getLeftIndex = (index) => index * 2 + 1
   const getRightIndex = (index) => index * 2 + 2
 
@@ -22,7 +22,7 @@ const createMaxHeapV1 = () => {
       }
 
       if (swapIndex === index) {
-        break
+        return
       }
 
       swap(arr, index, swapIndex)
@@ -58,7 +58,7 @@ export const heapSortV1 = createMaxHeapV1()
 heapSortV1([0, 2, 1, 4, 6, 7, 8, 5]) // [0, 1, 2, 4, 5, 6, 7, 8]
 
 const createMaxHeapV2 = () => {
-  const getParentIndex = (index) => Math.floor((index - 1) / 2)
+  const getParentIndex = (index) => (index - 1) >>> 1
   const getLeftIndex = (index) => index * 2 + 1
   const getRightIndex = (index) => index * 2 + 2
 
@@ -71,6 +71,8 @@ const createMaxHeapV2 = () => {
       let parentIndex = getParentIndex(index)
       if (parentIndex >= 0 && arr[index] > arr[parentIndex]) {
         swap(arr, index, parentIndex)
+      } else {
+        return
       }
 
       index = parentIndex
@@ -92,7 +94,7 @@ const createMaxHeapV2 = () => {
       }
 
       if (swapIndex === index) {
-        break
+        return
       }
 
       swap(arr, index, swapIndex)

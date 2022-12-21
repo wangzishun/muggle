@@ -16,22 +16,27 @@ export const minInsertions = (s) => {
 
   for (let i = 0; i < len; i++) {
     if (s[i] === '(') {
-      stack.push(s[i])
+      stack.push(1)
+      continue
     }
 
-    if (s[i] === ')') {
-      if (stack.length === 0) {
-        stack.push('(')
-        need++
-      }
+    /** 没有匹配的左括号， 需要插入一个左括号 */
+    if (stack.length === 0) {
+      stack.push(1)
+      need++
+    }
 
-      if (s[i + 1] === ')') {
-        stack.pop()
-        i++
-      } else {
-        stack.pop()
-        need++
-      }
+    /**
+     * 贪心
+     * 下一个如果是右括号，满足一对二条件
+     * 下一个如果不是右括号，需要插入一个右括号
+     */
+    if (s[i + 1] === ')') {
+      stack.pop()
+      i++
+    } else {
+      stack.pop()
+      need++
     }
   }
 
