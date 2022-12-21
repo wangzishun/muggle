@@ -18,7 +18,9 @@ const testcase = [
         [[10],       [],    [],    [],    [0],    [4],    [],    [],    [],    [],    [],    [],    [],    [],    [],    [0],    [4],    [],    [],    [7],    [],    [3],    [],    [3],    [],    [9],    [],    [0],    [8],    [],    [],    [0],    [8],    [],    [],    [2]]
       ],
       "output":[
-        null,0,9,4,null,null,0,4,2,6,1,3,5,7,8,null,null,0,4,null,7,null,3,null,3,null,9,null,null,0,8,null,null,0,8,null]}
+        null,0,9,4,null,null,0,4,2,6,1,3,5,7,8,null,null,0,4,null,7,null,3,null,3,null,9,null,null,0,8,null,null,0,8,null
+      ]
+    }
     `,
   ),
 ]
