@@ -13,7 +13,7 @@ export const asyncConcurrencyControlPoolV1 = async (limit, paramsList, func) => 
     const params = paramsList[index]
 
     const task = Promise.resolve().then(() => func(params, index, paramsList))
-    tasks.push(task)
+    tasks[index] = task
 
     const executingTask = task.finally(() => executingTasks.splice(executingTasks.indexOf(executingTask), 1))
     executingTasks.push(executingTask)

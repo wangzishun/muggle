@@ -1,0 +1,15 @@
+lockfileVersion: 5.4
+
+specifiers:
+  dayjs: ^1.11.7
+
+dependencies:
+  dayjs: registry.npmmirror.com/dayjs/1.11.7
+
+packages:
+
+  registry.npmmirror.com/dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.7.tgz}
+    name: dayjs
+    version: 1.11.7
+    dev: false
