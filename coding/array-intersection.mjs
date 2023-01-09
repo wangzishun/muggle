@@ -19,10 +19,10 @@ const cars = [
   [
     [1, 2, 2, 1], // arr1
     [2, 3, 2], // arr2
-    [2, 2] // result
+    [2, 2], // result
   ],
   [['name', 'wangzi', 'xiaozhang'], ['length', 'hallo', 'world'], []],
-  [['name', 'wangzi', 'xiaozhang'], ['mail', 'hallo', 'wangzi'], ['wangzi']]
+  [['name', 'wangzi', 'xiaozhang'], ['mail', 'hallo', 'wangzi'], ['wangzi']],
 ]
 
 describe('计算两个数组的交集', () => {

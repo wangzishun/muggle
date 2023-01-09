@@ -5,7 +5,9 @@ const _debounce = (func, delay, immediate) => {
       clearTimeout(timer)
     }
 
+    // 立即执行
     if (immediate) {
+      // 之前没有执行过func时，立即执行
       if (!timer) {
         func.apply(this, arguments)
       }
@@ -14,6 +16,7 @@ const _debounce = (func, delay, immediate) => {
         timer = null
       }, delay)
     } else {
+      // 延迟执行
       timer = setTimeout(() => {
         func.apply(this, arguments)
         timer = null
@@ -21,6 +24,7 @@ const _debounce = (func, delay, immediate) => {
     }
   }
 
+  // 取消
   debounced.cancel = () => {
     clearTimeout(timer)
     timer = null

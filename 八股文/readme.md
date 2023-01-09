@@ -68,3 +68,27 @@ react 在首次 mount 时会创建全局唯一的 FiberRootNode 用来保存一�
 在 update 时会重新进行 render 并构建一棵新的 WIF fiber，构建的过程中会尝试直接 biaout 复用或者将 current fiber 与 jsx element 进行 diff 算法来复用节点数据。在 commit 阶段修改 current 指针使 WIF fiber 变成 current fiber。
 
 # react 如何快速响应
+
+# commonJS
+
+1. 运行时加载。module.exports 属性需要模块执行过后才有
+2. 输出的是值的拷贝，换句话来说，一旦导出一个值，那么模块内部的变化无法影响这个值
+3. 通过 require 同步加载，加载完成后才能执行后面的操作。
+
+# ES module
+
+1. 对外接口是一种静态定义，代码静态解析阶段就会生成
+2. 输出的是值的引用，动态引用。JS 引擎在对脚本进行静态分析时，遇到 import 语句时会生成一个只读引用，等到脚本执行时根据只读引用去取值
+3. import 当作函数时可以异步加载，有一个独立的模块依赖解析阶段
+
+# 项目构建
+
+1. 代码转换，把 ts、less、sass、vue、jsx、tsx 编译 js、css、html
+2. 代码优化，删除无用的代码、注释、log，压缩代码体积
+3. 代码分割
+4. 模块合并
+5. 自动刷新
+6. 代码校验
+7. 自动发布
+
+# webpack 一切皆模块，通过 loader 转换文件，通过 plugin 注入钩子，输出由多个模块组合的文件

@@ -16,7 +16,7 @@ export function _createLeastRecentlyUsedCache(limit) {
     return value
   }
 
-  const set = (key, value) => {
+  const put = (key, value) => {
     if (map.has(key)) {
       map.delete(key)
     } else if (map.size >= limit) {
@@ -26,5 +26,5 @@ export function _createLeastRecentlyUsedCache(limit) {
     map.set(key, value)
   }
 
-  return { get, set }
+  return { get, put }
 }
