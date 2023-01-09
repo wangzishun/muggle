@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "main": "./AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --clear",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@antv/f2": "^4.0.39",
+    "dayjs": "^1.11.7",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "^0.70.5",
+    "react-native-canvas": "^0.1.38",
     "react-native-svg": "^13.6.0",
     "react-native-web": "~0.18.10",
+    "react-native-webview": "^11.26.0",
+    "rxjs": "^7.8.0",
     "victory-native": "^36.6.8"
   },
   "devDependencies": {

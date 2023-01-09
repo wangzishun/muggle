@@ -1,29 +1,39 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@antv/f2': ^4.0.39
   '@babel/core': ^7.20.12
   '@babel/preset-env': ^7.20.2
   '@expo/webpack-config': ^0.17.4
   '@types/react': ~18.0.26
   '@types/react-native': ~0.70.8
+  dayjs: ^1.11.7
   expo: ~47.0.12
   expo-status-bar: ~1.4.2
   react: 18.1.0
   react-dom: 18.1.0
   react-native: ^0.70.5
+  react-native-canvas: ^0.1.38
   react-native-svg: ^13.6.0
   react-native-web: ~0.18.10
+  react-native-webview: ^11.26.0
+  rxjs: ^7.8.0
   typescript: ^4.9.4
   victory-native: ^36.6.8
 
 dependencies:
+  '@antv/f2': registry.npmmirror.com/@antv/f2/4.0.39
+  dayjs: registry.npmmirror.com/dayjs/1.11.7
   expo: registry.npmmirror.com/expo/47.0.12_@babel+core@7.20.12
   expo-status-bar: registry.npmmirror.com/expo-status-bar/1.4.2
   react: registry.npmmirror.com/react/18.1.0
   react-dom: registry.npmmirror.com/react-dom/18.1.0_react@18.1.0
-  react-native: registry.npmmirror.com/react-native/0.70.6_rnpvdz5p36pviilrsprn2ditma
+  react-native: registry.npmmirror.com/react-native/0.70.6_lahc5xespok57ijioavxabv3he
+  react-native-canvas: registry.npmmirror.com/react-native-canvas/0.1.38_ox6mf4yqtzezabnczwrslmdsry
   react-native-svg: registry.npmmirror.com/react-native-svg/13.6.0_ed6hdicvoe3mtgaxburxkml6qq
   react-native-web: registry.npmmirror.com/react-native-web/0.18.10_ef5jwxihqo6n7gxfmzogljlgcm
+  react-native-webview: registry.npmmirror.com/react-native-webview/11.26.0_ed6hdicvoe3mtgaxburxkml6qq
+  rxjs: registry.npmmirror.com/rxjs/7.8.0
   victory-native: registry.npmmirror.com/victory-native/36.6.8_react@18.1.0
 
 devDependencies:
@@ -44,6 +54,63 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': registry.npmmirror.com/@jridgewell/gen-mapping/0.1.1
       '@jridgewell/trace-mapping': registry.npmmirror.com/@jridgewell/trace-mapping/0.3.17
+
+  registry.npmmirror.com/@antv/adjust/0.2.5:
+    resolution: {integrity: sha512-MfWZOkD9CqXRES6MBGRNe27Q577a72EIwyMnE29wIlPliFvJfWwsrONddpGU7lilMpVKecS3WAzOoip3RfPTRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/adjust/-/adjust-0.2.5.tgz}
+    name: '@antv/adjust'
+    version: 0.2.5
+    dependencies:
+      '@antv/util': registry.npmmirror.com/@antv/util/2.0.17
+      tslib: registry.npmmirror.com/tslib/1.14.1
+    dev: false
+
+  registry.npmmirror.com/@antv/event-emitter/0.1.3:
+    resolution: {integrity: sha512-4ddpsiHN9Pd4UIlWuKVK1C4IiZIdbwQvy9i7DUSI3xNJ89FPUFt8lxDYj8GzzfdllV0NkJTRxnG+FvLk0llidg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/event-emitter/-/event-emitter-0.1.3.tgz}
+    name: '@antv/event-emitter'
+    version: 0.1.3
+    dev: false
+
+  registry.npmmirror.com/@antv/f2-graphic/0.0.12:
+    resolution: {integrity: sha512-duNedSyNWwBzpXD9/Ar/Bszhzdxs2rXTTca38Txsdu6Fq4l3jmRkFeKfyQjjBgR2wldi73MTbZukY+ClgREJlQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/f2-graphic/-/f2-graphic-0.0.12.tgz}
+    name: '@antv/f2-graphic'
+    version: 0.0.12
+    dependencies:
+      '@antv/util': registry.npmmirror.com/@antv/util/2.0.17
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.20.7
+    dev: false
+
+  registry.npmmirror.com/@antv/f2/4.0.39:
+    resolution: {integrity: sha512-ohD812KOg0I0vqqpMRbdqWmJHE+r4SeWjFLeLkPX8mf0FHRNDAvZo01v+0HPyPCX8PhAR1rxf8bd5ztezpEO6w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/f2/-/f2-4.0.39.tgz}
+    name: '@antv/f2'
+    version: 4.0.39
+    dependencies:
+      '@antv/adjust': registry.npmmirror.com/@antv/adjust/0.2.5
+      '@antv/event-emitter': registry.npmmirror.com/@antv/event-emitter/0.1.3
+      '@antv/f2-graphic': registry.npmmirror.com/@antv/f2-graphic/0.0.12
+      '@antv/scale': registry.npmmirror.com/@antv/scale/0.3.18
+      '@antv/util': registry.npmmirror.com/@antv/util/2.0.17
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.20.7
+      d3-cloud: registry.npmmirror.com/d3-cloud/1.2.5
+    dev: false
+
+  registry.npmmirror.com/@antv/scale/0.3.18:
+    resolution: {integrity: sha512-GHwE6Lo7S/Q5fgaLPaCsW+CH+3zl4aXpnN1skOiEY0Ue9/u+s2EySv6aDXYkAqs//i0uilMDD/0/4n8caX9U9w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/scale/-/scale-0.3.18.tgz}
+    name: '@antv/scale'
+    version: 0.3.18
+    dependencies:
+      '@antv/util': registry.npmmirror.com/@antv/util/2.0.17
+      fecha: registry.npmmirror.com/fecha/4.2.3
+      tslib: registry.npmmirror.com/tslib/2.4.1
+    dev: false
+
+  registry.npmmirror.com/@antv/util/2.0.17:
+    resolution: {integrity: sha512-o6I9hi5CIUvLGDhth0RxNSFDRwXeywmt6ExR4+RmVAzIi48ps6HUy+svxOCayvrPBN37uE6TAc2KDofRo0nK9Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antv/util/-/util-2.0.17.tgz}
+    name: '@antv/util'
+    version: 2.0.17
+    dependencies:
+      csstype: registry.npmmirror.com/csstype/3.1.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
+    dev: false
 
   registry.npmmirror.com/@babel/code-frame/7.10.4:
     resolution: {integrity: sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.10.4.tgz}
@@ -2297,8 +2364,9 @@ packages:
       - encoding
     dev: false
 
-  registry.npmmirror.com/@react-native-community/cli-plugin-metro/9.2.1:
+  registry.npmmirror.com/@react-native-community/cli-plugin-metro/9.2.1_@babel+core@7.20.12:
     resolution: {integrity: sha512-byBGBH6jDfUvcHGFA45W/sDwMlliv7flJ8Ns9foCh3VsIeYYPoDjjK7SawE9cPqRdMAD4SY7EVwqJnOtRbwLiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@react-native-community/cli-plugin-metro/-/cli-plugin-metro-9.2.1.tgz}
+    id: registry.npmmirror.com/@react-native-community/cli-plugin-metro/9.2.1
     name: '@react-native-community/cli-plugin-metro'
     version: 9.2.1
     dependencies:
@@ -2308,11 +2376,12 @@ packages:
       metro: registry.npmmirror.com/metro/0.72.3
       metro-config: registry.npmmirror.com/metro-config/0.72.3
       metro-core: registry.npmmirror.com/metro-core/0.72.3
-      metro-react-native-babel-transformer: registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3
+      metro-react-native-babel-transformer: registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3_@babel+core@7.20.12
       metro-resolver: registry.npmmirror.com/metro-resolver/0.72.3
       metro-runtime: registry.npmmirror.com/metro-runtime/0.72.3
       readline: registry.npmmirror.com/readline/1.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -2366,8 +2435,9 @@ packages:
       joi: registry.npmmirror.com/joi/17.7.0
     dev: false
 
-  registry.npmmirror.com/@react-native-community/cli/9.3.2:
+  registry.npmmirror.com/@react-native-community/cli/9.3.2_@babel+core@7.20.12:
     resolution: {integrity: sha512-IAW4X0vmX/xozNpp/JVZaX7MrC85KV0OP2DF4o7lNGOfpUhzJAEWqTfkxFYS+VsRjZHDve4wSTiGIuXwE7FG1w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@react-native-community/cli/-/cli-9.3.2.tgz}
+    id: registry.npmmirror.com/@react-native-community/cli/9.3.2
     name: '@react-native-community/cli'
     version: 9.3.2
     engines: {node: '>=14'}
@@ -2378,7 +2448,7 @@ packages:
       '@react-native-community/cli-debugger-ui': registry.npmmirror.com/@react-native-community/cli-debugger-ui/9.0.0
       '@react-native-community/cli-doctor': registry.npmmirror.com/@react-native-community/cli-doctor/9.3.0
       '@react-native-community/cli-hermes': registry.npmmirror.com/@react-native-community/cli-hermes/9.3.1
-      '@react-native-community/cli-plugin-metro': registry.npmmirror.com/@react-native-community/cli-plugin-metro/9.2.1
+      '@react-native-community/cli-plugin-metro': registry.npmmirror.com/@react-native-community/cli-plugin-metro/9.2.1_@babel+core@7.20.12
       '@react-native-community/cli-server-api': registry.npmmirror.com/@react-native-community/cli-server-api/9.2.1
       '@react-native-community/cli-tools': registry.npmmirror.com/@react-native-community/cli-tools/9.2.1
       '@react-native-community/cli-types': registry.npmmirror.com/@react-native-community/cli-types/9.1.0
@@ -2391,6 +2461,7 @@ packages:
       prompts: registry.npmmirror.com/prompts/2.4.2
       semver: registry.npmmirror.com/semver/6.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -3395,7 +3466,7 @@ packages:
       '@babel/preset-env': registry.npmmirror.com/@babel/preset-env/7.20.2_@babel+core@7.20.12
       babel-plugin-module-resolver: registry.npmmirror.com/babel-plugin-module-resolver/4.1.0
       babel-plugin-react-native-web: registry.npmmirror.com/babel-plugin-react-native-web/0.18.10
-      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3
+      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3_@babel+core@7.20.12
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -4904,7 +4975,12 @@ packages:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-3.1.1.tgz}
     name: csstype
     version: 3.1.1
-    dev: true
+
+  registry.npmmirror.com/ctx-polyfill/1.1.4:
+    resolution: {integrity: sha512-tz65F3/zmZ2+CMtn4MhNhYi/yIN9dKnItMKzSkH2GE6dBpAIbUR0K5pSHWqUL3OuNBCA70DKlWZYUClHfydIXg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ctx-polyfill/-/ctx-polyfill-1.1.4.tgz}
+    name: ctx-polyfill
+    version: 1.1.4
+    dev: false
 
   registry.npmmirror.com/cyclist/1.0.1:
     resolution: {integrity: sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cyclist/-/cyclist-1.0.1.tgz}
@@ -4921,11 +4997,25 @@ packages:
       internmap: registry.npmmirror.com/internmap/2.0.3
     dev: false
 
+  registry.npmmirror.com/d3-cloud/1.2.5:
+    resolution: {integrity: sha512-4s2hXZgvs0CoUIw31oBAGrHt9Kt/7P9Ik5HIVzISFiWkD0Ga2VLAuO/emO/z1tYIpE7KG2smB4PhMPfFMJpahw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-cloud/-/d3-cloud-1.2.5.tgz}
+    name: d3-cloud
+    version: 1.2.5
+    dependencies:
+      d3-dispatch: registry.npmmirror.com/d3-dispatch/1.0.6
+    dev: false
+
   registry.npmmirror.com/d3-color/3.1.0:
     resolution: {integrity: sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-color/-/d3-color-3.1.0.tgz}
     name: d3-color
     version: 3.1.0
     engines: {node: '>=12'}
+    dev: false
+
+  registry.npmmirror.com/d3-dispatch/1.0.6:
+    resolution: {integrity: sha512-fVjoElzjhCEy+Hbn8KygnmMS7Or0a9sI2UzGwoB7cCtvI1XpVN9GpoYlnb3xt2YV66oXYb1fLJ8GMvP4hdU1RA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-dispatch/-/d3-dispatch-1.0.6.tgz}
+    name: d3-dispatch
+    version: 1.0.6
     dev: false
 
   registry.npmmirror.com/d3-ease/3.0.1:
@@ -5712,7 +5802,6 @@ packages:
     name: escape-string-regexp
     version: 2.0.0
     engines: {node: '>=8'}
-    dev: true
 
   registry.npmmirror.com/eslint-scope/4.0.3:
     resolution: {integrity: sha512-p7VutNr1O/QrxysMo3E45FjYDTeXBy0iTltPFNSqKAIfjDSXC+4dj+qfyuD8bfAXrW/y6lW3O76VaYNPKfpKrg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/eslint-scope/-/eslint-scope-4.0.3.tgz}
@@ -6207,6 +6296,12 @@ packages:
       ua-parser-js: registry.npmmirror.com/ua-parser-js/0.7.32
     transitivePeerDependencies:
       - encoding
+
+  registry.npmmirror.com/fecha/4.2.3:
+    resolution: {integrity: sha512-OP2IUU6HeYKJi3i0z4A19kHMQoLVs4Hc+DPqqxI2h/DPZHTm/vjsfC6P0b4jCMy14XizLBqvndQ+UilD7707Jw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fecha/-/fecha-4.2.3.tgz}
+    name: fecha
+    version: 4.2.3
+    dev: false
 
   registry.npmmirror.com/fetch-retry/4.1.1:
     resolution: {integrity: sha512-e6eB7zN6UBSwGVwrbWVH+gdLnkW9WwHhmq2YDK1Sh30pzx1onRVGBvogTlUeWxwTa+L86NYdo4hFkh7O8ZjSnA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fetch-retry/-/fetch-retry-4.1.1.tgz}
@@ -8618,10 +8713,13 @@ packages:
       uglify-es: registry.npmmirror.com/uglify-es/3.3.9
     dev: false
 
-  registry.npmmirror.com/metro-react-native-babel-preset/0.72.3:
+  registry.npmmirror.com/metro-react-native-babel-preset/0.72.3_@babel+core@7.20.12:
     resolution: {integrity: sha512-uJx9y/1NIqoYTp6ZW1osJ7U5ZrXGAJbOQ/Qzl05BdGYvN1S7Qmbzid6xOirgK0EIT0pJKEEh1s8qbassYZe4cw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.72.3.tgz}
+    id: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3
     name: metro-react-native-babel-preset
     version: 0.72.3
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': registry.npmmirror.com/@babel/core/7.20.12
       '@babel/plugin-proposal-async-generator-functions': registry.npmmirror.com/@babel/plugin-proposal-async-generator-functions/7.20.7_@babel+core@7.20.12
@@ -8665,16 +8763,19 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3:
+  registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3_@babel+core@7.20.12:
     resolution: {integrity: sha512-Ogst/M6ujYrl/+9mpEWqE3zF7l2mTuftDTy3L8wZYwX1pWUQWQpfU1aJBeWiLxt1XlIq+uriRjKzKoRoIK57EA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/metro-react-native-babel-transformer/-/metro-react-native-babel-transformer-0.72.3.tgz}
+    id: registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3
     name: metro-react-native-babel-transformer
     version: 0.72.3
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': registry.npmmirror.com/@babel/core/7.20.12
       babel-preset-fbjs: registry.npmmirror.com/babel-preset-fbjs/3.4.0_@babel+core@7.20.12
       hermes-parser: registry.npmmirror.com/hermes-parser/0.8.0
       metro-babel-transformer: registry.npmmirror.com/metro-babel-transformer/0.72.3
-      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3
+      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3_@babel+core@7.20.12
       metro-source-map: registry.npmmirror.com/metro-source-map/0.72.3
       nullthrows: registry.npmmirror.com/nullthrows/1.1.1
     transitivePeerDependencies:
@@ -8809,7 +8910,7 @@ packages:
       metro-hermes-compiler: registry.npmmirror.com/metro-hermes-compiler/0.72.3
       metro-inspector-proxy: registry.npmmirror.com/metro-inspector-proxy/0.72.3
       metro-minify-uglify: registry.npmmirror.com/metro-minify-uglify/0.72.3
-      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3
+      metro-react-native-babel-preset: registry.npmmirror.com/metro-react-native-babel-preset/0.72.3_@babel+core@7.20.12
       metro-resolver: registry.npmmirror.com/metro-resolver/0.72.3
       metro-runtime: registry.npmmirror.com/metro-runtime/0.72.3
       metro-source-map: registry.npmmirror.com/metro-source-map/0.72.3
@@ -10714,6 +10815,12 @@ packages:
     name: react-dev-utils
     version: 11.0.4
     engines: {node: '>=10'}
+    peerDependencies:
+      typescript: '>=2.7'
+      webpack: '>=4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
       '@babel/code-frame': registry.npmmirror.com/@babel/code-frame/7.10.4
       address: registry.npmmirror.com/address/1.1.2
@@ -10739,12 +10846,12 @@ packages:
       shell-quote: registry.npmmirror.com/shell-quote/1.7.2
       strip-ansi: registry.npmmirror.com/strip-ansi/6.0.0
       text-table: registry.npmmirror.com/text-table/0.2.0
+      typescript: registry.npmmirror.com/typescript/4.9.4
+      webpack: registry.npmmirror.com/webpack/4.43.0
     transitivePeerDependencies:
       - eslint
       - supports-color
-      - typescript
       - vue-template-compiler
-      - webpack
     dev: true
 
   registry.npmmirror.com/react-devtools-core/4.24.0:
@@ -10801,6 +10908,18 @@ packages:
     version: 18.2.0
     dev: false
 
+  registry.npmmirror.com/react-native-canvas/0.1.38_ox6mf4yqtzezabnczwrslmdsry:
+    resolution: {integrity: sha512-DjtN921PKoa2liYF8hKq1263xg2o47Bj/1E/+l75GPicT2RV/x/Y1HBrLvFVCR3OO+UslXEC5BtRjfxDoh/Bug==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-native-canvas/-/react-native-canvas-0.1.38.tgz}
+    id: registry.npmmirror.com/react-native-canvas/0.1.38
+    name: react-native-canvas
+    version: 0.1.38
+    peerDependencies:
+      react-native-webview: '>=5.10.0 || >=6.1.0'
+    dependencies:
+      ctx-polyfill: registry.npmmirror.com/ctx-polyfill/1.1.4
+      react-native-webview: registry.npmmirror.com/react-native-webview/11.26.0_ed6hdicvoe3mtgaxburxkml6qq
+    dev: false
+
   registry.npmmirror.com/react-native-codegen/0.70.6_@babel+preset-env@7.20.2:
     resolution: {integrity: sha512-kdwIhH2hi+cFnG5Nb8Ji2JwmcCxnaOOo9440ov7XDzSvGfmUStnCzl+MCW8jLjqHcE4icT7N9y+xx4f50vfBTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-native-codegen/-/react-native-codegen-0.70.6.tgz}
     id: registry.npmmirror.com/react-native-codegen/0.70.6
@@ -10834,7 +10953,7 @@ packages:
       css-select: registry.npmmirror.com/css-select/5.1.0
       css-tree: registry.npmmirror.com/css-tree/1.1.3
       react: registry.npmmirror.com/react/18.1.0
-      react-native: registry.npmmirror.com/react-native/0.70.6_rnpvdz5p36pviilrsprn2ditma
+      react-native: registry.npmmirror.com/react-native/0.70.6_lahc5xespok57ijioavxabv3he
     dev: false
 
   registry.npmmirror.com/react-native-web/0.18.10_ef5jwxihqo6n7gxfmzogljlgcm:
@@ -10859,7 +10978,22 @@ packages:
       - encoding
     dev: false
 
-  registry.npmmirror.com/react-native/0.70.6_rnpvdz5p36pviilrsprn2ditma:
+  registry.npmmirror.com/react-native-webview/11.26.0_ed6hdicvoe3mtgaxburxkml6qq:
+    resolution: {integrity: sha512-4T4CKRm8xlaQDz9h/bCMPGAvtkesrhkRWqCX9FDJEzBToaVUIsV0ZOqtC4w/JSnCtFKKYiaC1ReJtCGv+4mFeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-native-webview/-/react-native-webview-11.26.0.tgz}
+    id: registry.npmmirror.com/react-native-webview/11.26.0
+    name: react-native-webview
+    version: 11.26.0
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      escape-string-regexp: registry.npmmirror.com/escape-string-regexp/2.0.0
+      invariant: registry.npmmirror.com/invariant/2.2.4
+      react: registry.npmmirror.com/react/18.1.0
+      react-native: registry.npmmirror.com/react-native/0.70.6_lahc5xespok57ijioavxabv3he
+    dev: false
+
+  registry.npmmirror.com/react-native/0.70.6_lahc5xespok57ijioavxabv3he:
     resolution: {integrity: sha512-xtQdImPHnwgraEx3HIZFOF+D1hJ9bC5mfpIdUGoMHRws6OmvHAjmFpO6qfdnaQ29vwbmZRq7yf14sbury74R/w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-native/-/react-native-0.70.6.tgz}
     id: registry.npmmirror.com/react-native/0.70.6
     name: react-native
@@ -10870,7 +11004,7 @@ packages:
       react: 18.1.0
     dependencies:
       '@jest/create-cache-key-function': registry.npmmirror.com/@jest/create-cache-key-function/27.5.1
-      '@react-native-community/cli': registry.npmmirror.com/@react-native-community/cli/9.3.2
+      '@react-native-community/cli': registry.npmmirror.com/@react-native-community/cli/9.3.2_@babel+core@7.20.12
       '@react-native-community/cli-platform-android': registry.npmmirror.com/@react-native-community/cli-platform-android/9.3.1
       '@react-native-community/cli-platform-ios': registry.npmmirror.com/@react-native-community/cli-platform-ios/9.3.0
       '@react-native/assets': registry.npmmirror.com/@react-native/assets/1.0.0
@@ -10883,7 +11017,7 @@ packages:
       invariant: registry.npmmirror.com/invariant/2.2.4
       jsc-android: registry.npmmirror.com/jsc-android/250230.2.1
       memoize-one: registry.npmmirror.com/memoize-one/5.2.1
-      metro-react-native-babel-transformer: registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3
+      metro-react-native-babel-transformer: registry.npmmirror.com/metro-react-native-babel-transformer/0.72.3_@babel+core@7.20.12
       metro-runtime: registry.npmmirror.com/metro-runtime/0.72.3
       metro-source-map: registry.npmmirror.com/metro-source-map/0.72.3
       mkdirp: registry.npmmirror.com/mkdirp/0.5.6
@@ -10903,6 +11037,7 @@ packages:
       whatwg-fetch: registry.npmmirror.com/whatwg-fetch/3.6.2
       ws: registry.npmmirror.com/ws/6.2.2
     transitivePeerDependencies:
+      - '@babel/core'
       - '@babel/preset-env'
       - bufferutil
       - encoding
@@ -11352,6 +11487,14 @@ packages:
     dependencies:
       aproba: registry.npmmirror.com/aproba/1.2.0
     dev: true
+
+  registry.npmmirror.com/rxjs/7.8.0:
+    resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rxjs/-/rxjs-7.8.0.tgz}
+    name: rxjs
+    version: 7.8.0
+    dependencies:
+      tslib: registry.npmmirror.com/tslib/2.4.1
+    dev: false
 
   registry.npmmirror.com/safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz}
@@ -12566,6 +12709,12 @@ packages:
     dependencies:
       typescript: registry.npmmirror.com/typescript/4.9.4
     dev: true
+
+  registry.npmmirror.com/tslib/1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-1.14.1.tgz}
+    name: tslib
+    version: 1.14.1
+    dev: false
 
   registry.npmmirror.com/tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.4.1.tgz}
