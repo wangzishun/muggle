@@ -92,3 +92,5 @@ react 在首次 mount 时会创建全局唯一的 FiberRootNode 用来保存一�
 7. 自动发布
 
 # webpack 一切皆模块，通过 loader 转换文件，通过 plugin 注入钩子，输出由多个模块组合的文件
+
+# vite
