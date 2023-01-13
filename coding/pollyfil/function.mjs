@@ -1,3 +1,22 @@
+function _new(ctor, ...args) {
+  if (typeof ctor !== 'function') {
+    throw '_new(xxx) function is not a constructor'
+  }
+
+  _new.target = ctor
+
+  const obj = Object.create(ctor.prototype)
+
+  const result = ctor.apply(obj, args)
+
+  return result instanceof Object ? result : obj
+}
+
+/**
+ *
+ * @param {*} context
+ * @returns
+ */
 Function.prototype._bind = function (context) {
   const self = this
 

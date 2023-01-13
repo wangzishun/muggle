@@ -44,3 +44,9 @@ export const _flatten = (target, previousPath = '', result = {}) => {
 
   return result
 }
+
+export const _parse = (str) => {
+  return str.split('.').reduce((prev, curr) => {
+    return { [curr]: prev }
+  }, null)
+}
