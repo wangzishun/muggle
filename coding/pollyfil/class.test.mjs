@@ -1,21 +1,9 @@
-export const esSimpleInherit = function (target, origin) {
-  target.prototype = Object.create(origin.prototype, {
-    constructor: {
-      value: target,
-      enumeable: false,
-      writable: true,
-      configurable: true
-    }
-  })
-
-  Object.setPrototypeOf(target, origin)
-}
-
 /**
  * 测试
  */
 import assert from 'node:assert'
 import { test, describe, it } from 'node:test'
+import { _extend } from './class.mjs'
 
 describe('esSimpleInherit 1', () => {
   const OriCtor = function (name = 'OriCtor') {
@@ -34,7 +22,7 @@ describe('esSimpleInherit 1', () => {
     this.name = name
   }
 
-  esSimpleInherit(TarCtor, OriCtor)
+  _extend(TarCtor, OriCtor)
 
   const tar = new TarCtor()
 
