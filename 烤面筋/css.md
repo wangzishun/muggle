@@ -3,7 +3,7 @@
 - [CSS 中解决浮动中高度塌陷的方案](#css-中解决浮动中高度塌陷的方案)
 - [Flex 布局 (Flexible Box， 弹性布局)](#flex-布局-flexible-box-弹性布局)
 - [选择器](#选择器)
-- [层叠](#层叠)
+- [z-index 层叠](#z-index-层叠)
 - [伪类和伪元素及使用场景](#伪类和伪元素及使用场景)
 - [src 和 href 区别](#src-和-href-区别)
 - [创建独立图层](#创建独立图层)
@@ -78,9 +78,11 @@ id 选择器（ # myid）
 后代选择器（li a）
 通配符选择器（ \* ）
 
-# 层叠
+# z-index 层叠
 
-概念有两个，层叠上下文、层叠水平，但我们主要关心的是层叠顺序的规则，从低到高 background/border -> 负 z-index -> block -> float -> inline -> z-index auto/0 -> 正 z-index。我认为层叠顺序表示的是装饰、布局、内容这三点的顺序。
+概念有两个，层叠上下文、层叠水平，层叠上下文是一个概念上的东西，根据层叠规则决定位置的一个环境。还需要注意的一点是，具有层叠上下文的元素比普通元素要更靠近眼睛。层叠水平就是：在一个层叠上下文的环境下，元素在 z 轴上的排列顺序的规则，而层叠顺序就是这里说的具体规则，是实践的东西。
+
+但我们主要关心的是在统一上下文中的层叠顺序规则，层叠顺序表示的是装饰、布局、内容这三点的顺序，从低到高 background/border -> 负 z-index -> block -> float -> inline -> z-index auto/0 -> 正 z-index。
 
 只有同一个层叠上下文中进行比较才有意义，所以要先确定好层叠上下文。html(根层叠上下文)、position:relative/position:absolute 的定位元素
 z-index 值不为 auto 的 flex 项(父元素 display:flex|inline-flex).

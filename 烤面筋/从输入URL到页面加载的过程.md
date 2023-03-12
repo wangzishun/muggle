@@ -128,6 +128,10 @@ Status Code: 请求的返回状态码，如 200 代表成功
 强缓存（200 from cache）时 Cache-Control/Max-Age，浏览器如果判断本地缓存未过期，就直接使用，无需发起 http 请求
 协商缓存（304）时（http1.1）If-None-Match/E-tag（http1.0）If-Modified-Since/Last-Modified，浏览器会向服务端发起 http 请求，然后服务端告诉浏览器文件未改变，让浏览器使用本地缓存
 
+如果是脚本(js)、字体(font)、图片(img)之类的，会存到内存中，直接读取缓存，就是 from memory cache。
+如果是 css 之类的，一般放到硬盘中，就是 from disk cache。
+还和进入的顺序有关：访问-> 200 -> 退出浏览器->再进来-> 200(from disk cache) -> 刷新 -> 200(from memory cache)
+
 # 解析页面流程
 
 1. 解析 HTML，构建 DOM 树

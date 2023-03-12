@@ -1,3 +1,7 @@
+- [安装](#安装)
+  - [版本管理一](#版本管理一)
+  - [版本管理二 https://www.jenv.be/](#版本管理二-httpswwwjenvbe)
+
 # 安装
 
 ```bash
