@@ -19,6 +19,7 @@
   - [this 指向, 方法函数的调用](#this-指向-方法函数的调用)
   - [JS 异步解决方案以及优缺点](#js-异步解决方案以及优缺点)
 - [Promise](#promise)
+- [IntersectionObserver](#intersectionobserver)
   - [getComputedStyle](#getcomputedstyle)
   - [MessageChannel](#messagechannel)
   - [requestAnimationFrame](#requestanimationframe)
@@ -222,6 +223,25 @@ close callbacks 关闭的回调函数：一些准备关闭的回调函数，如�
 Promise 难点在 then 方法，每一个 then 都接受两个参数并且返回一个新的 Promise，同时会根据前一个 promise 的状态来处理这个新的 promise，如果是正在 pending 那么就存起来等状态变了再执行有点像观察者模式，如果是其他两个，那么就直接执行。
 
 all\allSettled\any\race
+
+# IntersectionObserver
+
+```js
+const io = new IntersectionObserver(callback, option)
+io.observe
+io.unobserve
+io.disconnect
+```
+
+time：可见性发生变化的时间，是一个高精度时间戳，单位为毫秒
+target：被观察的目标元素，是一个 DOM 节点对象
+rootBounds：根元素的矩形区域的信息，getBoundingClientRect()方法的返回值，如果没有根元素（即直接相对于视口滚动），则返回 null
+boundingClientRect：目标元素的矩形区域的信息
+intersectionRect：目标元素与视口（或根元素）的交叉区域的信息
+intersectionRatio：目标元素的可见比例，即 intersectionRect 占 boundingClientRect 的比例，完全可见时为 1，完全不可见时小于等于 0
+
+threshold: 属性决定了什么时候触发回调函数
+root 属性，rootMargin 属性
 
 ## getComputedStyle
 
