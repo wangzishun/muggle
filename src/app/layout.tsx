@@ -5,7 +5,7 @@ export const metadata = {
   description: '麻瓜修仙手册',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children, ...rest }) {
   return (
     <html lang="zh_CN">
       <body>{children}</body>

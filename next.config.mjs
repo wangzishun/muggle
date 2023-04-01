@@ -5,7 +5,7 @@ const withMdx = nextMdx({
   extension: /\.mdx?$/,
   options: {
     /* providerImportSource: …, otherOptions… */
-    providerImportSource: '@mdx-js/react',
+    // providerImportSource: '@mdx-js/react',
   },
 })
 
@@ -13,6 +13,7 @@ const withMdx = nextMdx({
 const nextConfig = {
   experimental: {
     appDir: true,
+    mdxRs: true,
   },
   output: 'export',
   // basePath: '/muggle',
