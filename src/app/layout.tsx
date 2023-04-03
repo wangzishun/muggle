@@ -1,14 +1,21 @@
+import { TopNavigationBar } from '@/components/TopNavigationBar'
 import './globals.css'
+import { listMDXCategory } from '@/utils/mdxHelper'
 
 export const metadata = {
-  title: 'Muggle',
-  description: '麻瓜修仙手册',
+  title: 'Muggle Handbook',
+  description: '',
 }
 
 export default async function RootLayout({ children, ...rest }) {
+  const postCategory = await listMDXCategory()
+
   return (
     <html lang="zh_CN">
-      <body>{children}</body>
+      <body>
+        <TopNavigationBar list={postCategory}></TopNavigationBar>
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

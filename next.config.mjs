@@ -15,9 +15,12 @@ const nextConfig = {
     appDir: true,
     mdxRs: true,
   },
-  output: 'export',
-  // basePath: '/muggle',
+  // TODO: 无法使用 output: export, 等待bug修复 https://github.com/vercel/next.js/issues/47334
+  // output: 'export',
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
+  compiler: {
+    // removeConsole: false
+  }
 }
 
 export default withMdx(nextConfig)
