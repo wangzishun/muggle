@@ -12,20 +12,20 @@ import { IconArrow } from '@/components/Icon/IconArrow'
 
 const MenuItem = ({ tree, level, shouldHighlight }) => {
   return tree.map((node) => {
-    const { key, value, children } = node
+    const { id, value, children } = node
 
     const { actived, expanded } = shouldHighlight(node)
     const hasChildren = children.length > 0
 
     return (
-      <Fragment key={key}>
+      <Fragment key={id}>
         <Link
-          href={key}
+          href={id}
           className={cls('flex justify-between items-center p-2 rounded-r-xl hover:bg-gray-5 dark:hover:bg-gray-80 ', {
             'font-bold': level === 1,
-            'pl-8': level === 1,
-            'pl-12': level === 2,
-            'pl-16': level === 3,
+            'pl-6': level === 1,
+            'pl-10': level === 2,
+            'pl-14': level === 3,
             'text-link dark:text-link-dark bg-highlight dark:bg-highlight-dark hover:bg-highlight': actived,
             'text-secondary ': !actived,
           })}
@@ -55,8 +55,8 @@ export const LeftSideBar = ({ mdxPathTree }: Props) => {
 
   const shouldHighlight = (node: MdxPathTreeNode) => {
     return {
-      actived: pathname === node.key,
-      expanded: pathname.startsWith(`${node.key}/`),
+      actived: pathname === `${node.id}/`,
+      expanded: pathname.startsWith(`${node.id}/`),
     }
   }
 

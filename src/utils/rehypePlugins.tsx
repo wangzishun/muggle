@@ -18,14 +18,15 @@ export const rehypeExtractHeadings = ({ rank = 2, headings }) => {
   slugger.reset()
   return (tree) => {
     visit(tree, 'element', function (node) {
-      if (headingRank(node) !== rank) {
-        return
+      const hr = headingRank(node)
+
+      if (hr) {
+        node.properties.id = slugger.slug(toString(node).trim())
       }
 
-      const id = slugger.slug(toString(node))
-
-      node.properties.id = id
-      headings.push({ title: toString(node), id })
+      if (hr === rank) {
+        headings.push({ title: toString(node), id: node.properties.id })
+      }
     })
   }
 }

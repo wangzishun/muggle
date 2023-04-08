@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 
@@ -5,9 +7,7 @@ import { parseMDXFilePaths, readMDXFileContent, MDX_DIRECTORY } from '@/utils/md
 import { rehypeExtractHeadings } from '@/utils/rehypePlugins'
 
 import { TableOfContentAnchors } from '@/components/TableOfContentAnchors'
-
-import { MDXRemoteComponent } from './MDXRemoteComponent'
-import { resolve } from 'path'
+import { MDXRemoteComponent } from '@/components/MDXComponents'
 
 type Props = {
   params: {

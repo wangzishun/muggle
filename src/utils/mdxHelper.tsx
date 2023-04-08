@@ -53,7 +53,7 @@ export const parseMDXFilePaths = async (root) => {
   return paths.sort()
 }
 
-export type MdxPathTreeNode = { key: string; value: string; children: MdxPathTreeNode[] }
+export type MdxPathTreeNode = { id: string; value: string; children: MdxPathTreeNode[] }
 
 /**
  * transform post file paths to tree structure
@@ -75,12 +75,12 @@ export const buildMdxPathTree = (paths: string[], prefix: string) => {
     for (const value of parts) {
       pathStack.push(value)
 
-      const key = pathStack.join('/')
+      const id = pathStack.join('/')
 
-      let node = map[key]
+      let node = map[id]
 
       if (!node) {
-        node = map[key] = { key, value, children: [] }
+        node = map[id] = { id, value, children: [] }
         current.push(node)
       }
 

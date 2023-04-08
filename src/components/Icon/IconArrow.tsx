@@ -6,7 +6,7 @@ type Props = JSX.IntrinsicElements['svg'] & {
   displayDirection: 'right' | 'down' | 'left'
 }
 
-export const IconArrow = memo(({ displayDirection = 'right', className }: Props) => {
+export const IconArrow = memo(({ displayDirection = 'right', className, ...rest }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +23,7 @@ export const IconArrow = memo(({ displayDirection = 'right', className }: Props)
         className,
       )}
       style={{ minWidth: 20, minHeight: 20 }}
+      {...rest}
     >
       <g fill="none" fillRule="evenodd" transform="translate(-446 -398)">
         <path
