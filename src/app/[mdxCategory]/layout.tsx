@@ -16,9 +16,9 @@ export default async function PostsPageLayout({ params, children }: Props) {
   const mdxPathTree = buildMdxPathTree(mdxFilePaths, /** prefix */ params.mdxCategory)
 
   return (
-    <div className="flex">
+    <div className="PostsPageLayout flex">
       <LeftSideBar mdxPathTree={mdxPathTree} />
-      <div className="flex-1">{children}</div>
+      {children}
     </div>
   )
 }

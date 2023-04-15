@@ -29,13 +29,10 @@ export default async function MdxSegmentsPage({ params }: Props) {
   })
 
   return (
-    <div className="flex justify-between">
-      <article className="px-12 flex-1">
-        <MDXRemoteComponent source={source} scope={data} />
-        <div className="h-96"></div>
-      </article>
+    <>
+      <MDXRemoteComponent source={source} scope={data} />
       <TableOfContentAnchors headings={headings}></TableOfContentAnchors>
-    </div>
+    </>
   )
 }
 

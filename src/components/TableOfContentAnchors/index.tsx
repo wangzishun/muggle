@@ -1,7 +1,7 @@
 'use client'
 
 import cls from 'classnames'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 
 import { useThrottleFn, useEventListener } from 'ahooks'
 
@@ -12,49 +12,51 @@ type Props = {
 export const TableOfContentAnchors = ({ headings }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const { run: updateActiveLink } = useThrottleFn(
-    () => {
-      const pageHeight = document.body.scrollHeight
-      const scrollPosition = window.scrollY + window.innerHeight
+  const ref = useRef<HTMLElement>(null)
 
-      const headingsLastIndex = headings.length - 1
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       const id = entry.target.id
 
-      if (scrollPosition >= pageHeight) {
-        return setCurrentIndex(headingsLastIndex)
-      }
+  //       const a = ref.current?.querySelector(`a[href="#${id}"]`)
+  //       if (!a) {
+  //         return
+  //       }
+  //       if (entry.intersectionRatio > 0) {
+  //         a.classList.add('bg-highlight', 'dark:bg-highlight-dark', 'text-link', 'dark:text-link-dark')
+  //       } else {
+  //         a.classList.remove('bg-highlight', 'dark:bg-highlight-dark', 'text-link', 'dark:text-link-dark')
+  //       }
+  //     })
+  //   })
 
-      for (let i = 0; i <= headingsLastIndex; i++) {
-        const h = document.getElementById(headings[i].id)
-        if (!h) continue
+  //   headings
+  //     .map((heading) => document.querySelector(`#${heading.id}`)!)
+  //     .filter(Boolean)
+  //     .map((el) => observer.observe(el))
 
-        const { top } = h.getBoundingClientRect()
-
-        if (top > 60) {
-          return setCurrentIndex(Math.max(i - 1, 0))
-        }
-      }
-    },
-    { wait: 100 },
-  )
-
-  useEventListener('scroll', updateActiveLink)
-  useEventListener('resize', updateActiveLink)
+  //   return observer.disconnect
+  // }, [])
 
   return (
-    <nav className="w-full h-full overflow-y-auto hidden lg:max-w-xs xl:block sticky top-16 right-0 space-y-2 text-sm">
-      {headings?.map((heading, index) => {
-        return (
-          <a
-            href={`#${heading.id}`}
-            key={heading.id}
-            className={cls('rounded-l-xl p-2 block hover:text-link hover:dark:text-link-dark', {
-              'bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark': currentIndex === index,
-            })}
-          >
-            {heading.title}
-          </a>
-        )
-      })}
-    </nav>
+    <aside className="TableOfContentAnchors hidden xl:block w-80">
+      <nav
+        ref={ref}
+        className="w-80 h-screen fixed top-0 right-0 pt-24 overflow-y-auto space-y-2 text-sm bg-white z-10"
+      >
+        {headings?.map((heading, index) => {
+          return (
+            <a
+              href={`#${heading.id}`}
+              key={heading.id}
+              className={cls('rounded-l-xl p-2 block hover:text-link hover:dark:text-link-dark', {})}
+            >
+              {heading.title}
+            </a>
+          )
+        })}
+      </nav>
+    </aside>
   )
 }

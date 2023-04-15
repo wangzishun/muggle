@@ -7,5 +7,10 @@ import * as HTMLComponents from './HTMLComponents'
 import { Sandpack } from './Sandpack'
 
 export const MDXRemoteComponent = ({ source, scope }) => {
-  return <MDXRemote {...source} components={{ ...HTMLComponents, Sandpack }} />
+  return (
+    <article className="px-12 flex-1 min-w-0">
+      <MDXRemote {...source} components={{ ...HTMLComponents, Sandpack }} />
+      <div className="h-96"></div>
+    </article>
+  )
 }

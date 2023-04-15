@@ -61,9 +61,9 @@ export const LeftSideBar = ({ mdxPathTree }: Props) => {
   }
 
   return (
-    <aside className="z-10 hidden lg:block bg-white">
+    <aside className="LeftSideBar hidden lg:block w-80 flex-shrink-0">
       <nav
-        className="sticky top-16 w-80 h-[calc(100vh-4rem)] overflow-y-scroll"
+        className="w-80 h-screen fixed top-0 pt-24 overflow-y-scroll bg-white z-10"
         style={{ overscrollBehavior: 'contain' }}
       >
         <MenuItem tree={mdxPathTree} level={1} shouldHighlight={shouldHighlight}></MenuItem>
